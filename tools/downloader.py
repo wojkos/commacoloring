@@ -17,7 +17,7 @@ if __name__ == "__main__":
   """
   cur.execute("SELECT * FROM images")
   for name, data, track in cur.fetchall():
-    print "downloading", name
+    print("downloading", name)
     lst.append({"name": name, "data": data, "track": track})
     i += 1
   """
@@ -25,11 +25,11 @@ if __name__ == "__main__":
   # support images2 download
   cur.execute("SELECT * FROM images2")
   for name, data, track, email, gid in cur.fetchall():
-    print "downloading", name, email
+    print("downloading", name, email)
     lst.append({"name": name, "data": data, "track": track, "email": email, "gid": gid})
     i += 1
 
-  print "got", i
+  print("got", i)
   st = json.dumps(lst)
   open(OUTFILE, "w").write(st)
 

@@ -18,7 +18,7 @@ def root():
   cur.execute("SELECT * FROM images LIMIT 50")
   for name, data, track in cur.fetchall():
     img = base64.b64encode(open(os.path.join(DATA_PATH, name)).read())
-    print name
+    print(name)
     ret.append('<tr><td><img src="data:image/png;base64,'+img+'" /></td><td><img src="'+data+'" /></td></tr>')
   return ''.join(ret)
 
